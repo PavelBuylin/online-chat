@@ -1,0 +1,14 @@
+@keyframes messageAnimation {
+	from {
+		position: relative; 
+		top: 100px;
+	}
+	to {
+		position: relative; 
+		top: 0px;
+	}
+}
+
+.msg {
+	animation: messageAnimation 0.5s ease-in-out;
+}
