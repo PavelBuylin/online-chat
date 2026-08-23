@@ -1,6 +1,6 @@
 import { Server } from 'socket.io'
 
-const PORT = 3001
+const PORT = Number(process.env.PORT) || 3001
 
 interface IMessage {
 	type?: 'default' | 'disconnect' | 'join'
