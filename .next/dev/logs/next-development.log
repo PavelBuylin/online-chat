@@ -1,33 +1,41 @@
-{"timestamp":"00:00:00.928","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:11.640","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:00:12.770","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:00:13.603","source":"Browser","level":"LOG","message":"Pavel подключился"}
-{"timestamp":"00:00:36.787","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:00:37.519","source":"Browser","level":"LOG","message":"Pavel подключился"}
-{"timestamp":"00:00:39.016","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:00:39.512","source":"Browser","level":"LOG","message":"Pavel вышел"}
-{"timestamp":"00:00:41.410","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:00:42.138","source":"Browser","level":"LOG","message":"Pavel подключился"}
-{"timestamp":"00:00:44.149","source":"Browser","level":"LOG","message":"Pavel вышел"}
-{"timestamp":"00:00:44.151","source":"Browser","level":"LOG","message":"Pavel вышел"}
-{"timestamp":"00:00:47.733","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:00:48.475","source":"Browser","level":"LOG","message":"Pavel подключился"}
-{"timestamp":"00:00:50.480","source":"Browser","level":"LOG","message":"Pavel вышел"}
-{"timestamp":"00:00:50.497","source":"Browser","level":"LOG","message":"Pavel вышел"}
-{"timestamp":"00:01:12.303","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:01:15.969","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:01:18.376","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:01:20.416","source":"Browser","level":"LOG","message":"Pavel подключился"}
-{"timestamp":"00:01:20.829","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:01:20.945","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:01:24.437","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:01:24.494","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:01:25.638","source":"Browser","level":"LOG","message":"Petro подключился"}
-{"timestamp":"00:01:27.633","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:01:27.634","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:01:28.985","source":"Browser","level":"LOG","message":"Pavel вышел"}
-{"timestamp":"00:01:28.986","source":"Browser","level":"LOG","message":"Pavel вышел"}
-{"timestamp":"00:01:32.871","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:01:33.647","source":"Browser","level":"LOG","message":"Pavel подключился"}
-{"timestamp":"00:01:35.642","source":"Browser","level":"LOG","message":"Pavel вышел"}
-{"timestamp":"00:01:35.647","source":"Browser","level":"LOG","message":"Pavel вышел"}
+{"timestamp":"00:00:00.885","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:02.583","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:00:04.306","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:00:05.092","source":"Browser","level":"LOG","message":"Pavel подключился"}
+{"timestamp":"00:00:05.867","source":"Browser","level":"LOG","message":"Petro вышел"}
+{"timestamp":"00:00:05.869","source":"Browser","level":"LOG","message":"Petro вышел"}
+{"timestamp":"00:00:07.102","source":"Browser","level":"LOG","message":"Pavel вышел"}
+{"timestamp":"00:00:07.108","source":"Browser","level":"LOG","message":"Pavel вышел"}
+{"timestamp":"00:00:07.488","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:00:08.201","source":"Browser","level":"LOG","message":"Petro подключился"}
+{"timestamp":"00:00:10.202","source":"Browser","level":"LOG","message":"Petro вышел"}
+{"timestamp":"00:00:10.203","source":"Browser","level":"LOG","message":"Petro вышел"}
+{"timestamp":"00:00:13.363","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:00:14.116","source":"Browser","level":"LOG","message":"Pavel подключился"}
+{"timestamp":"00:00:16.111","source":"Browser","level":"LOG","message":"Pavel вышел"}
+{"timestamp":"00:00:16.114","source":"Browser","level":"LOG","message":"Pavel вышел"}
+{"timestamp":"00:00:42.053","source":"Browser","level":"LOG","message":"Pavel вышел"}
+{"timestamp":"00:00:49.401","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:00:52.131","source":"Browser","level":"LOG","message":"Pavel вышел"}
+{"timestamp":"00:01:17.203","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:01:34.962","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:01:35.727","source":"Browser","level":"LOG","message":"Pavel подключился"}
+{"timestamp":"00:01:54.279","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:02:06.690","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:02:13.424","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:02:14.117","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:02:14.185","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:02:14.328","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:02:14.476","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:02:14.611","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:02:14.751","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:02:15.185","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:02:15.370","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:02:15.483","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:02:15.603","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:02:15.740","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:02:15.817","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:02:15.968","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:02:16.121","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:02:16.206","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:02:20.696","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}

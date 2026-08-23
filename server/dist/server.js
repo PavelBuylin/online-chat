@@ -7,28 +7,12 @@ const io = new socket_io_1.Server(PORT, {
         origin: '*'
     }
 });
-const roomUsers = new Map();
-const getKey = (roomID, username) => `${roomID}/${username}`;
 io.on('connection', socket => {
     console.log('Новый пользователь подключился к сокету:', socket.id);
     socket.on('CLIENT_USER_JOIN', (roomID, username) => {
+        console.log(`${username} подключился,`, roomID);
         socket.join(`room/${roomID}`);
-        const key = getKey(roomID, username);
-        let state = roomUsers.get(key);
-        if (!state) {
-            state = { sockets: new Set(), disconnectTimeout: null };
-            roomUsers.set(key, state);
-        }
-        state.sockets.add(socket.id);
-        if (state.disconnectTimeout) {
-            clearTimeout(state.disconnectTimeout);
-            state.disconnectTimeout = null;
-            console.log(`${username} переподключился, уведомления не отправляются`);
-        }
-        else if (state.sockets.size === 1) {
-            console.log(`${username} подключился,`, roomID);
-            socket.broadcast.to(`room/${roomID}`).emit('SERVER_USER_JOIN', username);
-        }
+        socket.broadcast.to(`room/${roomID}`).emit('SERVER_USER_JOIN', username);
     });
     socket.on('CLIENT_USER_TYPING', (username, value, roomID) => {
         console.log(`${username} печатает: ${value}, комната: ${roomID}`);
@@ -43,18 +27,8 @@ io.on('connection', socket => {
     const username = socket.handshake.auth.username;
     const roomID = socket.handshake.auth.roomID;
     socket.on('disconnecting', () => {
-        const key = getKey(roomID, username);
-        const state = roomUsers.get(key);
-        if (!state)
-            return;
-        state.sockets.delete(socket.id);
-        if (state.sockets.size === 0) {
-            state.disconnectTimeout = setTimeout(() => {
-                console.log(`${username} вышел из комнаты,`, roomID);
-                socket.broadcast.to(`room/${roomID}`).emit('SERVER_USER_DISCONNECT', username);
-                roomUsers.delete(key);
-            }, 2000);
-        }
+        console.log(`${username} вышел из комнаты,`, roomID);
+        socket.broadcast.to(`room/${roomID}`).emit('SERVER_USER_DISCONNECT', username);
     });
 });
 console.log(`Сервер запущен на порту ${PORT}`);
