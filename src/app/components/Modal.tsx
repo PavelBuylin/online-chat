@@ -105,7 +105,14 @@ export default function Modal({ isOpen, setIsOpen, buttonType }: ModalProps) {
 								password={password}
 							/>
 						)}
-						{buttonType === 'Join' && <Button type="NextJoin" />}
+						{buttonType === 'Join' && (
+							<Button
+								type="NextJoin"
+								name={name!}
+								password={password}
+								roomCode={roomCode}
+							/>
+						)}
 					</div>
 				</div>
 			</div>

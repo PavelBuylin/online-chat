@@ -1,10 +1,10 @@
 'use client'
 
 import { IMessage, useMessageContext } from '@/app/context/MessageContext'
+import { useSocketContext } from '@/app/context/SocketContext'
 import { getDate } from '@/methods/getDate'
 import { useParams } from 'next/navigation'
 import { useEffect, useRef } from 'react'
-import { io } from 'socket.io-client'
 import Footer from './Footer'
 import Header from './Header'
 import Message from './Message'
@@ -13,6 +13,7 @@ export default function Room() {
 	const { chatContent, setChatContent } = useMessageContext()
 	const params = useParams()
 
+	const { socket } = useSocketContext()!
 	const chatContentRef = useRef(chatContent)
 
 	useEffect(() => {
@@ -20,15 +21,11 @@ export default function Room() {
 	}, [chatContent])
 
 	useEffect(() => {
+		if (!socket || !params.id) return
 		const username = JSON.parse(localStorage.getItem('user')!).name
-		const socket = io('http://localhost:3001', {
-			auth: {
-				username,
-				roomID: params.id
-			}
-		})
-		socket.emit('CLIENT_USER_JOIN', params.id, username)
-		socket.on('SERVER_USER_JOIN', (username: string) => {
+
+		socket?.emit('CLIENT_USER_JOIN', params.id, username)
+		socket?.on('SERVER_USER_JOIN', (username: string) => {
 			console.log(`${username} подключился`)
 
 			const newMessage: IMessage = {
@@ -41,7 +38,7 @@ export default function Room() {
 			setChatContent([newMessage, ...chatContentRef.current])
 		})
 
-		socket.on('SERVER_USER_DISCONNECT', (username: string) => {
+		socket?.on('SERVER_USER_DISCONNECT', (username: string) => {
 			console.log(`${username} вышел`)
 
 			const newMessage: IMessage = {
@@ -55,9 +52,9 @@ export default function Room() {
 		})
 
 		return () => {
-			socket.disconnect()
+			socket?.disconnect()
 		}
-	}, [])
+	}, [socket, params.id])
 
 	return (
 		<div className="flex flex-col h-screen w-full">

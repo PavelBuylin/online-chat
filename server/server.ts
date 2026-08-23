@@ -1,3 +1,4 @@
+import { IMessage } from '@/app/context/MessageContext'
 import { Server } from 'socket.io'
 
 const PORT = 3001
@@ -15,6 +16,12 @@ io.on('connection', socket => {
 		console.log(`${username} подключился,`, roomID)
 		socket.join(`room/${roomID}`)
 		socket.broadcast.to(`room/${roomID}`).emit('SERVER_USER_JOIN', username)
+	})
+
+	socket.on('CLIENT_SEND_MESSAGE', (message: IMessage, roomID: string) => {
+		console.log(message)
+		socket.join(`room/${roomID}`)
+		socket.broadcast.to(`room/${roomID}`).emit('SERVER_SEND_MESSAGE', message)
 	})
 
 	const username = socket.handshake.auth.username

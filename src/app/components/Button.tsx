@@ -13,6 +13,7 @@ interface ButtonProps {
 	setButtonType?: Dispatch<SetStateAction<ButtonType>>
 	name?: string
 	password?: string
+	roomCode?: string
 }
 
 export default function Button({
@@ -20,7 +21,8 @@ export default function Button({
 	setIsOpenModal,
 	setButtonType,
 	name,
-	password
+	password,
+	roomCode
 }: ButtonProps) {
 	const router = useRouter()
 
@@ -31,26 +33,49 @@ export default function Button({
 		router.push(`/room/${code}`)
 	}
 
+	const validateData = () => {
+		if (name?.trim() === '' || password?.trim() === '') {
+			alert('Введите данные!')
+			return
+		} else if (name?.length! < 4) {
+			alert('Имя должно содержать не менее 4 символов!')
+			return
+		} else if (password?.length! < 8) {
+			alert('Пароль должен содержать не менее 8 символов!')
+			return
+		}
+	}
+
+	const createUser = () => {
+		const user = {
+			id: nanoid(5),
+			name,
+			password
+		}
+		localStorage.setItem('user', JSON.stringify(user))
+	}
+
 	return (
 		<button
 			onClick={(e: MouseEvent<HTMLButtonElement>) => {
 				setIsOpenModal !== undefined && setIsOpenModal(true)
 				setButtonType !== undefined && setButtonType(type)
 
-				if (name?.trim() === '' || password?.trim() === '') {
-					alert('Введите данные!')
-				} else if (name?.length! < 4) {
-					alert('Имя должно содержать не менее 4 символов!')
-				} else if (password?.length! < 8) {
-					alert('Пароль должен содержать не менее 8 символов!')
-				} else if (type === 'NextCreate') {
-					const user = {
-						id: nanoid(5),
-						name,
-						password
+				validateData()
+				switch (type) {
+					case 'NextCreate': {
+						createUser()
+						pushToNewRoom(e)
+						break
 					}
-					localStorage.setItem('user', JSON.stringify(user))
-					pushToNewRoom(e)
+					case 'NextJoin':
+						if (roomCode?.trim() === '') {
+							alert('Введите данные!')
+						} else {
+							createUser()
+							router.push(`/room/${roomCode}`)
+							break
+						}
 				}
 			}}
 			className={`p-2 mt-5 w-50 rounded-[10px] cursor-pointer 

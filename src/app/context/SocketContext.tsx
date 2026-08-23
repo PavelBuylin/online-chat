@@ -7,5 +7,5 @@ interface SocketContextType {
 	socket: Socket | null
 }
 
-export const SocketContext = createContext<SocketContextType | undefined>(undefined)
+export const SocketContext = createContext<SocketContextType | null>(null)
 export const useSocketContext = () => useContext(SocketContext)
