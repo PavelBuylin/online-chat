@@ -10,31 +10,43 @@ interface IMessage {
 	msg: string
 }
 
+interface RoomUserState {
+	sockets: Set<string>
+	disconnectTimeout: NodeJS.Timeout | null
+}
+
 const io = new Server(PORT, {
 	cors: {
 		origin: '*'
 	}
 })
 
-const disconnectTimers = new Map<string, NodeJS.Timeout>()
+const roomUsers = new Map<string, RoomUserState>()
+const getKey = (roomID: string, username: string) => `${roomID}/${username}`
 
 io.on('connection', socket => {
 	console.log('Новый пользователь подключился к сокету:', socket.id)
 
 	socket.on('CLIENT_USER_JOIN', (roomID: string, username: string) => {
 		socket.join(`room/${roomID}`)
+		const key = getKey(roomID, username)
 
-		const timerKey = `${roomID}/${username}`
-
-		if (disconnectTimers.has(timerKey)) {
-			clearTimeout(disconnectTimers.get(timerKey))
-			disconnectTimers.delete(timerKey)
-			console.log(`${username} переподключился, уведомления не отправляются`)
-			return
+		let state = roomUsers.get(key)
+		if (!state) {
+			state = { sockets: new Set(), disconnectTimeout: null }
+			roomUsers.set(key, state)
 		}
 
-		console.log(`${username} подключился,`, roomID)
-		socket.broadcast.to(`room/${roomID}`).emit('SERVER_USER_JOIN', username)
+		state.sockets.add(socket.id)
+
+		if (state.disconnectTimeout) {
+			clearTimeout(state.disconnectTimeout)
+			state.disconnectTimeout = null
+			console.log(`${username} переподключился, уведомления не отправляются`)
+		} else if (state.sockets.size === 1) {
+			console.log(`${username} подключился,`, roomID)
+			socket.broadcast.to(`room/${roomID}`).emit('SERVER_USER_JOIN', username)
+		}
 	})
 
 	socket.on('CLIENT_USER_TYPING', (username: string, value: string, roomID: string) => {
@@ -53,15 +65,19 @@ io.on('connection', socket => {
 	const roomID = socket.handshake.auth.roomID
 
 	socket.on('disconnecting', () => {
-		const timerKey = `${roomID}/${username}`
+		const key = getKey(roomID, username)
+		const state = roomUsers.get(key)
+		if (!state) return
 
-		const timer = setTimeout(() => {
-			console.log(`${username} вышел из комнаты,`, roomID)
-			socket.broadcast.to(`room/${roomID}`).emit('SERVER_USER_DISCONNECT', username)
-			disconnectTimers.delete(timerKey)
-		}, 2000)
+		state.sockets.delete(socket.id)
 
-		disconnectTimers.set(timerKey, timer)
+		if (state.sockets.size === 0) {
+			state.disconnectTimeout = setTimeout(() => {
+				console.log(`${username} вышел из комнаты,`, roomID)
+				socket.broadcast.to(`room/${roomID}`).emit('SERVER_USER_DISCONNECT', username)
+				roomUsers.delete(key)
+			}, 2000)
+		}
 	})
 })
 

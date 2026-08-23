@@ -1,94 +1,33 @@
-{"timestamp":"00:00:04.417","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:07.677","source":"Server","level":"LOG","message":"○ Compiling / ..."}
-{"timestamp":"00:00:14.722","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:01:58.999","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:02:00.607","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:02:03.891","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:02:04.659","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:02:44.975","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:03:38.072","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:03:46.376","source":"Browser","level":"LOG","message":"Pavel подключился"}
-{"timestamp":"00:04:03.178","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:04:04.342","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:04:04.345","source":"Browser","level":"LOG","message":"Petro подключился"}
-{"timestamp":"00:04:04.345","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:04:07.644","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:04:08.482","source":"Browser","level":"LOG","message":"Petro подключился"}
-{"timestamp":"00:04:08.482","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:04:08.485","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:04:13.710","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:04:23.272","source":"Browser","level":"LOG","message":"Petro подключился"}
-{"timestamp":"00:04:25.796","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:04:26.566","source":"Browser","level":"LOG","message":"Pavel вышел"}
-{"timestamp":"00:04:26.566","source":"Browser","level":"LOG","message":"Pavel подключился"}
-{"timestamp":"00:04:26.567","source":"Browser","level":"LOG","message":"Pavel вышел"}
-{"timestamp":"00:07:56.299","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:07:57.529","source":"Browser","level":"LOG","message":"Petro подключился"}
-{"timestamp":"00:07:57.529","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:07:57.542","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:08:00.053","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:08:00.803","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:08:00.803","source":"Browser","level":"LOG","message":"Petro подключился"}
-{"timestamp":"00:08:00.803","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:08:22.876","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:08:23.645","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:08:23.649","source":"Browser","level":"LOG","message":"Petro подключился"}
-{"timestamp":"00:08:23.649","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:08:29.400","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:08:30.191","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:08:30.195","source":"Browser","level":"LOG","message":"Petro подключился"}
-{"timestamp":"00:08:30.195","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:08:56.785","source":"Server","level":"LOG","message":"✓ Compiled in 65ms"}
-{"timestamp":"00:08:56.811","source":"Browser","level":"ERROR","message":"./src/app/providers/SocketContextProvider.tsx:20:68\nError: Expression expected\n  18 | \t\tif (localStorage.getItem('user') && pathname === `/room/${params.id}`) {\n  19 | \t\t\tconst username = JSON.parse(localStorage.getItem('user')!).name\n> 20 | \t\t\tconst socketInstance = io(process.env.NEXT_PUBLIC_SOCKET_URL! ||, {\n     |                                                                 ^\n  21 | \t\t\t\tauth: {\n  22 | \t\t\t\t\tusername,\n  23 | \t\t\t\t\troomID: params.id\n\nParsing ecmascript source code failed\n\nImport trace:\n  Server Component:\n    ./src/app/providers/SocketContextProvider.tsx\n    ./src/app/layout.tsx "}
-{"timestamp":"00:08:56.813","source":"Server","level":"ERROR","message":"[browser] \"./src/app/providers/SocketContextProvider.tsx:20:68\\nError: Expression expected\\n  18 | \\t\\tif (localStorage.getItem('user') && pathname === `/room/${params.id}`) {\\n  19 | \\t\\t\\tconst username = JSON.parse(localStorage.getItem('user')!).name\\n> 20 | \\t\\t\\tconst socketInstance = io(process.env.NEXT_PUBLIC_SOCKET_URL! ||, {\\n     |                                                                 ^\\n  21 | \\t\\t\\t\\tauth: {\\n  22 | \\t\\t\\t\\t\\tusername,\\n  23 | \\t\\t\\t\\t\\troomID: params.id\\n\\nParsing ecmascript source code failed\\n\\nImport trace:\\n  Server Component:\\n    ./src/app/providers/SocketContextProvider.tsx\\n    ./src/app/layout.tsx\" \"\""}
-{"timestamp":"00:08:56.813","source":"Browser","level":"ERROR","message":"./src/app/providers/SocketContextProvider.tsx:20:68\nError: Expression expected\n  18 | \t\tif (localStorage.getItem('user') && pathname === `/room/${params.id}`) {\n  19 | \t\t\tconst username = JSON.parse(localStorage.getItem('user')!).name\n> 20 | \t\t\tconst socketInstance = io(process.env.NEXT_PUBLIC_SOCKET_URL! ||, {\n     |                                                                 ^\n  21 | \t\t\t\tauth: {\n  22 | \t\t\t\t\tusername,\n  23 | \t\t\t\t\troomID: params.id\n\nParsing ecmascript source code failed\n\nImport trace:\n  Server Component:\n    ./src/app/providers/SocketContextProvider.tsx\n    ./src/app/layout.tsx "}
-{"timestamp":"00:08:56.814","source":"Server","level":"ERROR","message":"[browser] \"./src/app/providers/SocketContextProvider.tsx:20:68\\nError: Expression expected\\n  18 | \\t\\tif (localStorage.getItem('user') && pathname === `/room/${params.id}`) {\\n  19 | \\t\\t\\tconst username = JSON.parse(localStorage.getItem('user')!).name\\n> 20 | \\t\\t\\tconst socketInstance = io(process.env.NEXT_PUBLIC_SOCKET_URL! ||, {\\n     |                                                                 ^\\n  21 | \\t\\t\\t\\tauth: {\\n  22 | \\t\\t\\t\\t\\tusername,\\n  23 | \\t\\t\\t\\t\\troomID: params.id\\n\\nParsing ecmascript source code failed\\n\\nImport trace:\\n  Server Component:\\n    ./src/app/providers/SocketContextProvider.tsx\\n    ./src/app/layout.tsx\" \"\""}
-{"timestamp":"00:08:56.880","source":"Browser","level":"ERROR","message":"./src/app/providers/SocketContextProvider.tsx:20:68\nError: Expression expected\n  18 | \t\tif (localStorage.getItem('user') && pathname === `/room/${params.id}`) {\n  19 | \t\t\tconst username = JSON.parse(localStorage.getItem('user')!).name\n> 20 | \t\t\tconst socketInstance = io(process.env.NEXT_PUBLIC_SOCKET_URL! ||, {\n     |                                                                 ^\n  21 | \t\t\t\tauth: {\n  22 | \t\t\t\t\tusername,\n  23 | \t\t\t\t\troomID: params.id\n\nParsing ecmascript source code failed\n\nImport trace:\n  Server Component:\n    ./src/app/providers/SocketContextProvider.tsx\n    ./src/app/layout.tsx "}
-{"timestamp":"00:08:56.880","source":"Server","level":"ERROR","message":"[browser] \"./src/app/providers/SocketContextProvider.tsx:20:68\\nError: Expression expected\\n  18 | \\t\\tif (localStorage.getItem('user') && pathname === `/room/${params.id}`) {\\n  19 | \\t\\t\\tconst username = JSON.parse(localStorage.getItem('user')!).name\\n> 20 | \\t\\t\\tconst socketInstance = io(process.env.NEXT_PUBLIC_SOCKET_URL! ||, {\\n     |                                                                 ^\\n  21 | \\t\\t\\t\\tauth: {\\n  22 | \\t\\t\\t\\t\\tusername,\\n  23 | \\t\\t\\t\\t\\troomID: params.id\\n\\nParsing ecmascript source code failed\\n\\nImport trace:\\n  Server Component:\\n    ./src/app/providers/SocketContextProvider.tsx\\n    ./src/app/layout.tsx\" \"\""}
-{"timestamp":"00:08:56.892","source":"Browser","level":"ERROR","message":"./src/app/providers/SocketContextProvider.tsx:20:68\nError: Expression expected\n  18 | \t\tif (localStorage.getItem('user') && pathname === `/room/${params.id}`) {\n  19 | \t\t\tconst username = JSON.parse(localStorage.getItem('user')!).name\n> 20 | \t\t\tconst socketInstance = io(process.env.NEXT_PUBLIC_SOCKET_URL! ||, {\n     |                                                                 ^\n  21 | \t\t\t\tauth: {\n  22 | \t\t\t\t\tusername,\n  23 | \t\t\t\t\troomID: params.id\n\nParsing ecmascript source code failed\n\nImport trace:\n  Server Component:\n    ./src/app/providers/SocketContextProvider.tsx\n    ./src/app/layout.tsx "}
-{"timestamp":"00:08:56.892","source":"Server","level":"ERROR","message":"[browser] \"./src/app/providers/SocketContextProvider.tsx:20:68\\nError: Expression expected\\n  18 | \\t\\tif (localStorage.getItem('user') && pathname === `/room/${params.id}`) {\\n  19 | \\t\\t\\tconst username = JSON.parse(localStorage.getItem('user')!).name\\n> 20 | \\t\\t\\tconst socketInstance = io(process.env.NEXT_PUBLIC_SOCKET_URL! ||, {\\n     |                                                                 ^\\n  21 | \\t\\t\\t\\tauth: {\\n  22 | \\t\\t\\t\\t\\tusername,\\n  23 | \\t\\t\\t\\t\\troomID: params.id\\n\\nParsing ecmascript source code failed\\n\\nImport trace:\\n  Server Component:\\n    ./src/app/providers/SocketContextProvider.tsx\\n    ./src/app/layout.tsx\" \"\""}
-{"timestamp":"00:09:02.554","source":"Server","level":"LOG","message":"✓ Compiled in 45ms"}
-{"timestamp":"00:09:02.565","source":"Browser","level":"ERROR","message":"./src/app/providers/SocketContextProvider.tsx:20:30\nError: Expression expected\n  18 | \t\tif (localStorage.getItem('user') && pathname === `/room/${params.id}`) {\n  19 | \t\t\tconst username = JSON.parse(localStorage.getItem('user')!).name\n> 20 | \t\t\tconst socketInstance = io(, {\n     |                           ^\n  21 | \t\t\t\tauth: {\n  22 | \t\t\t\t\tusername,\n  23 | \t\t\t\t\troomID: params.id\n\nParsing ecmascript source code failed\n\nImport trace:\n  Server Component:\n    ./src/app/providers/SocketContextProvider.tsx\n    ./src/app/layout.tsx "}
-{"timestamp":"00:09:02.565","source":"Server","level":"ERROR","message":"[browser] \"./src/app/providers/SocketContextProvider.tsx:20:30\\nError: Expression expected\\n  18 | \\t\\tif (localStorage.getItem('user') && pathname === `/room/${params.id}`) {\\n  19 | \\t\\t\\tconst username = JSON.parse(localStorage.getItem('user')!).name\\n> 20 | \\t\\t\\tconst socketInstance = io(, {\\n     |                           ^\\n  21 | \\t\\t\\t\\tauth: {\\n  22 | \\t\\t\\t\\t\\tusername,\\n  23 | \\t\\t\\t\\t\\troomID: params.id\\n\\nParsing ecmascript source code failed\\n\\nImport trace:\\n  Server Component:\\n    ./src/app/providers/SocketContextProvider.tsx\\n    ./src/app/layout.tsx\" \"\""}
-{"timestamp":"00:09:02.566","source":"Browser","level":"ERROR","message":"./src/app/providers/SocketContextProvider.tsx:20:30\nError: Expression expected\n  18 | \t\tif (localStorage.getItem('user') && pathname === `/room/${params.id}`) {\n  19 | \t\t\tconst username = JSON.parse(localStorage.getItem('user')!).name\n> 20 | \t\t\tconst socketInstance = io(, {\n     |                           ^\n  21 | \t\t\t\tauth: {\n  22 | \t\t\t\t\tusername,\n  23 | \t\t\t\t\troomID: params.id\n\nParsing ecmascript source code failed\n\nImport trace:\n  Server Component:\n    ./src/app/providers/SocketContextProvider.tsx\n    ./src/app/layout.tsx "}
-{"timestamp":"00:09:02.566","source":"Server","level":"ERROR","message":"[browser] \"./src/app/providers/SocketContextProvider.tsx:20:30\\nError: Expression expected\\n  18 | \\t\\tif (localStorage.getItem('user') && pathname === `/room/${params.id}`) {\\n  19 | \\t\\t\\tconst username = JSON.parse(localStorage.getItem('user')!).name\\n> 20 | \\t\\t\\tconst socketInstance = io(, {\\n     |                           ^\\n  21 | \\t\\t\\t\\tauth: {\\n  22 | \\t\\t\\t\\t\\tusername,\\n  23 | \\t\\t\\t\\t\\troomID: params.id\\n\\nParsing ecmascript source code failed\\n\\nImport trace:\\n  Server Component:\\n    ./src/app/providers/SocketContextProvider.tsx\\n    ./src/app/layout.tsx\" \"\""}
-{"timestamp":"00:09:07.916","source":"Server","level":"LOG","message":"✓ Compiled in 34ms"}
-{"timestamp":"00:09:16.106","source":"Server","level":"LOG","message":"✓ Compiled in 37ms"}
-{"timestamp":"00:09:21.984","source":"Server","level":"LOG","message":"✓ Compiled in 31ms"}
-{"timestamp":"00:09:33.545","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:09:37.498","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:09:43.649","source":"Browser","level":"LOG","message":"Pavel вышел"}
-{"timestamp":"00:09:43.993","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:09:44.062","source":"Browser","level":"LOG","message":"Petro подключился"}
-{"timestamp":"00:09:45.388","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:09:45.455","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:09:45.543","source":"Browser","level":"LOG","message":"Petro подключился"}
-{"timestamp":"00:09:57.879","source":"Browser","level":"LOG","message":"Petro вышел"}
-{"timestamp":"00:09:57.949","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:09:58.012","source":"Browser","level":"LOG","message":"Petro подключился"}
-{"timestamp":"00:18:30.451","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:18:31.729","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:18:32.610","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:18:32.686","source":"Browser","level":"LOG","message":"Pavel подключился"}
-{"timestamp":"00:18:33.159","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:18:33.207","source":"Browser","level":"LOG","message":"Pavel подключился"}
-{"timestamp":"00:18:34.104","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:18:34.157","source":"Browser","level":"LOG","message":"Petro подключился"}
-{"timestamp":"00:18:35.880","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:18:35.942","source":"Browser","level":"LOG","message":"Pavel подключился"}
-{"timestamp":"00:18:42.423","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:18:42.463","source":"Browser","level":"LOG","message":"Pavel подключился"}
-{"timestamp":"00:18:43.333","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:18:43.400","source":"Browser","level":"LOG","message":"Pavel подключился"}
-{"timestamp":"00:19:20.602","source":"Browser","level":"LOG","message":"Pavel вышел"}
-{"timestamp":"00:19:26.924","source":"Browser","level":"LOG","message":"Pavel подключился"}
-{"timestamp":"00:19:31.928","source":"Browser","level":"LOG","message":"Pavel вышел"}
-{"timestamp":"00:21:33.867","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:21:35.225","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:21:45.497","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:21:55.908","source":"Browser","level":"LOG","message":"Pavel подключился"}
-{"timestamp":"00:21:57.974","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:22:05.355","source":"Browser","level":"LOG","message":"Pavel вышел"}
-{"timestamp":"00:22:12.007","source":"Browser","level":"LOG","message":"Pavel подключился"}
-{"timestamp":"00:22:15.374","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:22:16.099","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:00:00.928","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:11.640","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:00:12.770","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:00:13.603","source":"Browser","level":"LOG","message":"Pavel подключился"}
+{"timestamp":"00:00:36.787","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:00:37.519","source":"Browser","level":"LOG","message":"Pavel подключился"}
+{"timestamp":"00:00:39.016","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:00:39.512","source":"Browser","level":"LOG","message":"Pavel вышел"}
+{"timestamp":"00:00:41.410","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:00:42.138","source":"Browser","level":"LOG","message":"Pavel подключился"}
+{"timestamp":"00:00:44.149","source":"Browser","level":"LOG","message":"Pavel вышел"}
+{"timestamp":"00:00:44.151","source":"Browser","level":"LOG","message":"Pavel вышел"}
+{"timestamp":"00:00:47.733","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:00:48.475","source":"Browser","level":"LOG","message":"Pavel подключился"}
+{"timestamp":"00:00:50.480","source":"Browser","level":"LOG","message":"Pavel вышел"}
+{"timestamp":"00:00:50.497","source":"Browser","level":"LOG","message":"Pavel вышел"}
+{"timestamp":"00:01:12.303","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:01:15.969","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:01:18.376","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:01:20.416","source":"Browser","level":"LOG","message":"Pavel подключился"}
+{"timestamp":"00:01:20.829","source":"Browser","level":"LOG","message":"Petro вышел"}
+{"timestamp":"00:01:20.945","source":"Browser","level":"LOG","message":"Petro вышел"}
+{"timestamp":"00:01:24.437","source":"Browser","level":"LOG","message":"Petro вышел"}
+{"timestamp":"00:01:24.494","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:01:25.638","source":"Browser","level":"LOG","message":"Petro подключился"}
+{"timestamp":"00:01:27.633","source":"Browser","level":"LOG","message":"Petro вышел"}
+{"timestamp":"00:01:27.634","source":"Browser","level":"LOG","message":"Petro вышел"}
+{"timestamp":"00:01:28.985","source":"Browser","level":"LOG","message":"Pavel вышел"}
+{"timestamp":"00:01:28.986","source":"Browser","level":"LOG","message":"Pavel вышел"}
+{"timestamp":"00:01:32.871","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:01:33.647","source":"Browser","level":"LOG","message":"Pavel подключился"}
+{"timestamp":"00:01:35.642","source":"Browser","level":"LOG","message":"Pavel вышел"}
+{"timestamp":"00:01:35.647","source":"Browser","level":"LOG","message":"Pavel вышел"}
