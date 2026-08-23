@@ -16,12 +16,25 @@ const io = new Server(PORT, {
 	}
 })
 
+const disconnectTimers = new Map<string, NodeJS.Timeout>()
+
 io.on('connection', socket => {
 	console.log('Новый пользователь подключился к сокету:', socket.id)
 
 	socket.on('CLIENT_USER_JOIN', (roomID: string, username: string) => {
-		console.log(`${username} подключился,`, roomID)
 		socket.join(`room/${roomID}`)
+
+		const timerKey = `${roomID}/${username}`
+
+		// Если это быстрое переподключение (F5) — отменяем disconnect и не шлём join
+		if (disconnectTimers.has(timerKey)) {
+			clearTimeout(disconnectTimers.get(timerKey))
+			disconnectTimers.delete(timerKey)
+			console.log(`${username} переподключился, уведомления не отправляются`)
+			return
+		}
+
+		console.log(`${username} подключился,`, roomID)
 		socket.broadcast.to(`room/${roomID}`).emit('SERVER_USER_JOIN', username)
 	})
 
@@ -41,8 +54,15 @@ io.on('connection', socket => {
 	const roomID = socket.handshake.auth.roomID
 
 	socket.on('disconnecting', () => {
-		console.log(`${username} вышел из комнаты,`, roomID)
-		socket.broadcast.to(`room/${roomID}`).emit('SERVER_USER_DISCONNECT', username)
+		const timerKey = `${roomID}/${username}`
+
+		const timer = setTimeout(() => {
+			console.log(`${username} вышел из комнаты,`, roomID)
+			socket.broadcast.to(`room/${roomID}`).emit('SERVER_USER_DISCONNECT', username)
+			disconnectTimers.delete(timerKey)
+		}, 2000)
+
+		disconnectTimers.set(timerKey, timer)
 	})
 })
 
