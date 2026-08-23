@@ -1,7 +1,14 @@
-import { IMessage } from '@/app/context/MessageContext'
 import { Server } from 'socket.io'
 
 const PORT = 3001
+
+interface IMessage {
+	type?: 'default' | 'disconnect' | 'join'
+	userID?: string
+	username: string
+	date: string | number
+	msg: string
+}
 
 const io = new Server(PORT, {
 	cors: {
