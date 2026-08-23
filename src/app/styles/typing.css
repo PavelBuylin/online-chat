@@ -1,0 +1,26 @@
+@keyframes typingAnimation {
+	from {
+		transform: translateY(2px);
+	}
+	to {
+		transform: translateY(-2px);
+	}
+}
+
+#dot1,
+#dot2,
+#dot3 {
+	animation: typingAnimation 0.3s ease-in-out infinite alternate;
+}
+
+#dot1 {
+	animation-delay: 0s;
+}
+
+#dot2 {
+	animation-delay: 0.1s;
+}
+
+#dot3 {
+	animation-delay: 0.2s;
+}

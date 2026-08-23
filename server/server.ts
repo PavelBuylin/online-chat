@@ -18,6 +18,12 @@ io.on('connection', socket => {
 		socket.broadcast.to(`room/${roomID}`).emit('SERVER_USER_JOIN', username)
 	})
 
+	socket.on('CLIENT_USER_TYPING', (username: string, value: string, roomID: string) => {
+		console.log(`${username} печатает: ${value}, комната: ${roomID}`)
+		socket.join(`room/${roomID}`)
+		socket.broadcast.to(`room/${roomID}`).emit('SERVER_USER_TYPING', username, value)
+	})
+
 	socket.on('CLIENT_SEND_MESSAGE', (message: IMessage, roomID: string) => {
 		console.log(message)
 		socket.join(`room/${roomID}`)

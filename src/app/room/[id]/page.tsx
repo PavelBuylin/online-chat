@@ -11,9 +11,9 @@ import Message from './Message'
 
 export default function Room() {
 	const { chatContent, setChatContent } = useMessageContext()
-	const params = useParams()
-
 	const { socket } = useSocketContext()!
+
+	const params = useParams()
 	const chatContentRef = useRef(chatContent)
 
 	useEffect(() => {

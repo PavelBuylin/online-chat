@@ -46,6 +46,7 @@ export default function SendButton({ message }: SendButtonProps) {
 
 		setChatContent([newMessage, ...chatContentRef.current])
 		setMessage({ userID: '', username: '', date: '', msg: '' })
+		socket?.emit('CLIENT_USER_TYPING', '', '', params.id)
 	}
 
 	return (

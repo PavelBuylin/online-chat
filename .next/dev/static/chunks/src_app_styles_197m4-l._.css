@@ -1,0 +1,33 @@
+/* [project]/src/app/styles/pulse.css [app-client] (css) */
+@keyframes pulseAnimation {
+  from {
+    box-shadow: 0 0 #22c55e4d;
+  }
+
+  to {
+    box-shadow: 0 0 0 4px #22c55e4d;
+  }
+}
+
+.pulse {
+  animation: .8s ease-in-out infinite alternate pulseAnimation;
+}
+
+/* [project]/src/app/styles/message.css [app-client] (css) */
+@keyframes messageAnimation {
+  from {
+    position: relative;
+    top: 100px;
+  }
+
+  to {
+    position: relative;
+    top: 0;
+  }
+}
+
+.msg {
+  animation: .5s ease-in-out messageAnimation;
+}
+
+/*# sourceMappingURL=src_app_styles_197m4-l._.css.map*/

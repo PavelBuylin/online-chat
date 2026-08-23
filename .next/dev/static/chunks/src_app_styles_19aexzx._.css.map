@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///home/pavel/Desktop/online-chat/src/app/styles/pulse.css"],"sourcesContent":["@keyframes pulseAnimation {\n\tfrom {\n\t\tbox-shadow: 0 0 0 0px rgb(34 197 94 / 0.3);\n\t}\n\tto {\n\t\tbox-shadow: 0 0 0 4px rgb(34 197 94 / 0.3);\n\t}\n}\n\n.pulse {\n\tanimation: pulseAnimation 0.8s infinite alternate ease-in-out;\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;;;AASA"}},
+    {"offset": {"line": 16, "column": 0}, "map": {"version":3,"sources":["file:///home/pavel/Desktop/online-chat/src/app/styles/typing.css"],"sourcesContent":["@keyframes typingAnimation {\n\tfrom {\n\t\ttransform: translateY(2px);\n\t}\n\tto {\n\t\ttransform: translateY(-2px);\n\t}\n}\n\n#dot1,\n#dot2,\n#dot3 {\n\tanimation: typingAnimation 0.3s ease-in-out infinite alternate;\n}\n\n#dot1 {\n\tanimation-delay: 0s;\n}\n\n#dot2 {\n\tanimation-delay: 0.1s;\n}\n\n#dot3 {\n\tanimation-delay: 0.2s;\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;;;AASA;;;;AAMA;;;;AAIA;;;;AAIA"}}]
+}

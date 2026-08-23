@@ -1,14 +1,27 @@
 'use client'
 
 import { useMessageContext } from '@/app/context/MessageContext'
-import { ChangeEvent } from 'react'
+import { useSocketContext } from '@/app/context/SocketContext'
+import { useParams } from 'next/navigation'
+import { ChangeEvent, useEffect, useState } from 'react'
 import SendButton from './SendButton'
 
 export default function Footer() {
+	const { socket } = useSocketContext()!
 	const { message, setMessage } = useMessageContext()
+	const [username, setUsername] = useState<string | null>(null)
 
-	const handleChangeMessage = (e: ChangeEvent<HTMLInputElement>) =>
-		setMessage({ msg: e.target.value!, username: '', date: '' })
+	const params = useParams()
+
+	useEffect(() => {
+		setUsername(JSON.parse(localStorage.getItem('user')!).name)
+	}, [])
+
+	const handleChangeMessage = (e: ChangeEvent<HTMLInputElement>) => {
+		if (message.msg !== '') socket?.emit('CLIENT_USER_TYPING', username, e.target.value, params.id)
+
+		setMessage({ msg: e.target.value!, username: username!, date: '' })
+	}
 
 	return (
 		<footer className="mt-auto border-t border-gray-500/35 h-15 p-13 flex justify-center items-center gap-5">

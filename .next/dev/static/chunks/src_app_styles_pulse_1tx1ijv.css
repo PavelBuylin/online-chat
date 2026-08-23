@@ -1,0 +1,16 @@
+/* [project]/src/app/styles/pulse.css [app-client] (css) */
+@keyframes pulseAnimation {
+  from {
+    box-shadow: 0 0 #22c55e4d;
+  }
+
+  to {
+    box-shadow: 0 0 0 4px #22c55e4d;
+  }
+}
+
+.pulse {
+  animation: .8s ease-in-out infinite alternate pulseAnimation;
+}
+
+/*# sourceMappingURL=src_app_styles_pulse_1tx1ijv.css.map*/
