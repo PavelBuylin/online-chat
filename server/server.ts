@@ -26,7 +26,6 @@ io.on('connection', socket => {
 
 		const timerKey = `${roomID}/${username}`
 
-		// Если это быстрое переподключение (F5) — отменяем disconnect и не шлём join
 		if (disconnectTimers.has(timerKey)) {
 			clearTimeout(disconnectTimers.get(timerKey))
 			disconnectTimers.delete(timerKey)
