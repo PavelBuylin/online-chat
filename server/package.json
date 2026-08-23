@@ -2,14 +2,21 @@
 	"name": "server",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "dist/server.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev": "node server.ts"
+		"dev": "tsx watch server.ts",
+		"build": "tsc",
+		"start": "node dist/server.js"
 	},
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
 		"socket.io": "^4.8.3"
+	},
+	"devDependencies": {
+		"@types/node": "^20.19.43",
+		"tsx": "^4.23.12",
+		"typescript": "^5.9.3"
 	}
 }
