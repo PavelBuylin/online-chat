@@ -47,7 +47,7 @@ function HumanTyping() {
             className: "flex justify-center items-center",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    className: "text-center text-gray-500",
+                    className: "humanTyping text-center text-gray-500",
                     children: [
                         username,
                         " печатает"
@@ -113,6 +113,7 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$context$2f$MessageContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/context/MessageContext.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$context$2f$SocketContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/context/SocketContext.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$methods$2f$getDate$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/methods/getDate.ts [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$room$2f5b$id$5d2f$SendButton$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/room/[id]/SendButton.tsx [app-ssr] (ecmascript)");
@@ -123,14 +124,60 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$room$2f5b$id$5
 ;
 ;
 ;
+;
 function Footer() {
     const { socket } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$context$2f$SocketContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSocketContext"])();
-    const { message, setMessage } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$context$2f$MessageContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMessageContext"])();
-    const [username, setUsername] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const { message, setMessage, setChatContent, chatContent } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$context$2f$MessageContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMessageContext"])();
     const params = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useParams"])();
+    const chatContentRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(chatContent);
+    const [username, setUsername] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         setUsername(JSON.parse(localStorage.getItem('user')).name);
     }, []);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        chatContentRef.current = chatContent;
+    }, [
+        chatContent
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        const handleMessage = (message)=>{
+            setChatContent([
+                message,
+                ...chatContentRef.current
+            ]);
+        };
+        socket?.on('SERVER_SEND_MESSAGE', (message)=>handleMessage(message));
+        return ()=>{
+            socket?.off('SERVER_SEND_MESSAGE', handleMessage);
+        };
+    }, [
+        socket
+    ]);
+    const sendMessage = ()=>{
+        setMessage({
+            ...message,
+            msg: message.msg
+        });
+        const newMessage = {
+            userID: JSON.parse(localStorage.getItem('user')).id,
+            username: JSON.parse(localStorage.getItem('user')).name,
+            date: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$methods$2f$getDate$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getDate"])(),
+            msg: message.msg,
+            type: 'default'
+        };
+        socket?.emit('CLIENT_SEND_MESSAGE', newMessage, params.id);
+        setChatContent([
+            newMessage,
+            ...chatContentRef.current
+        ]);
+        setMessage({
+            userID: '',
+            username: '',
+            date: '',
+            msg: ''
+        });
+        socket?.emit('CLIENT_USER_TYPING', '', '', params.id);
+    };
     const handleChangeMessage = (e)=>{
         if (message.msg !== '') socket?.emit('CLIENT_USER_TYPING', username, e.target.value, params.id);
         setMessage({
@@ -139,31 +186,36 @@ function Footer() {
             date: ''
         });
     };
+    const handleKeyDown = (e)=>{
+        if (message.msg && e.key === 'Enter') sendMessage();
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
         className: "mt-auto border-t border-gray-500/35 h-15 p-13 flex justify-center items-center gap-5",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                 placeholder: "Сообщение...",
                 type: "text",
-                className: "border border-gray-500/35 w-[70%] rounded-[10px] outline-none p-2 text-2xl",
+                className: "border border-gray-500/35 w-[70%] rounded-[10px] outline-none p-2 text-2xl text-white",
                 onChange: handleChangeMessage,
+                onKeyDown: handleKeyDown,
                 value: message.msg ?? ''
             }, void 0, false, {
                 fileName: "[project]/src/app/room/[id]/Footer.tsx",
-                lineNumber: 28,
+                lineNumber: 65,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$room$2f5b$id$5d2f$SendButton$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                message: message
+                message: message,
+                sendMessage: sendMessage
             }, void 0, false, {
                 fileName: "[project]/src/app/room/[id]/Footer.tsx",
-                lineNumber: 35,
+                lineNumber: 73,
                 columnNumber: 4
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/room/[id]/Footer.tsx",
-        lineNumber: 27,
+        lineNumber: 64,
         columnNumber: 3
     }, this);
 }
@@ -213,7 +265,7 @@ function Header() {
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "mr-5 text-green-500",
+                        className: "inStream mr-5 text-green-500",
                         children: "В эфире"
                     }, void 0, false, {
                         fileName: "[project]/src/app/room/[id]/Header.tsx",
@@ -221,6 +273,7 @@ function Header() {
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                        className: "roomID text-white",
                         children: params.id
                     }, void 0, false, {
                         fileName: "[project]/src/app/room/[id]/Header.tsx",
@@ -230,6 +283,7 @@ function Header() {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$copy$2d$to$2d$clipboard$2f$lib$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CopyToClipboard"], {
                         text: params.id,
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa6$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FaRegCopy"], {
+                            color: "white",
                             className: "cursor-pointer"
                         }, void 0, false, {
                             fileName: "[project]/src/app/room/[id]/Header.tsx",
@@ -321,9 +375,9 @@ function Message({ message }) {
                         columnNumber: 6
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: `w-fit min-w-10 max-w-100 rounded-tl-2xl rounded-tr-2xl ${!isMe() ? 'border border-gray-500/35 p-2 pr-4  rounded-br-2xl rounded-bl-[5px]' : 'bg-blue-600/65 p-2 pr-4  rounded-br-[5px] rounded-bl-2xl'}`,
+                        className: `msg w-fit min-w-10 max-w-100 rounded-tl-2xl rounded-tr-2xl ${!isMe() ? 'border border-gray-500/35 p-2 pr-4  rounded-br-2xl rounded-bl-[5px]' : 'bg-blue-600/65 p-2 pr-4  rounded-br-[5px] rounded-bl-2xl'}`,
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "wrap-break-word",
+                            className: "wrap-break-word text-white",
                             children: message.msg
                         }, void 0, false, {
                             fileName: "[project]/src/app/room/[id]/Message.tsx",
@@ -434,69 +488,11 @@ __turbopack_context__.s([
     ()=>SendButton
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$context$2f$MessageContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/context/MessageContext.tsx [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$context$2f$SocketContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/context/SocketContext.tsx [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$methods$2f$getDate$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/methods/getDate.ts [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$ri$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/ri/index.mjs [app-ssr] (ecmascript)");
 'use client';
 ;
 ;
-;
-;
-;
-;
-;
-function SendButton({ message }) {
-    const { socket } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$context$2f$SocketContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSocketContext"])();
-    const { setChatContent, chatContent, setMessage } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$context$2f$MessageContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMessageContext"])();
-    const chatContentRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(chatContent);
-    const params = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useParams"])();
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        chatContentRef.current = chatContent;
-    }, [
-        chatContent
-    ]);
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        const handleMessage = (message)=>{
-            setChatContent([
-                message,
-                ...chatContentRef.current
-            ]);
-        };
-        socket?.on('SERVER_SEND_MESSAGE', (message)=>handleMessage(message));
-        return ()=>{
-            socket?.off('SERVER_SEND_MESSAGE', handleMessage);
-        };
-    }, [
-        socket
-    ]);
-    const sendMessage = ()=>{
-        setMessage({
-            ...message,
-            msg: message.msg
-        });
-        const newMessage = {
-            userID: JSON.parse(localStorage.getItem('user')).id,
-            username: JSON.parse(localStorage.getItem('user')).name,
-            date: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$methods$2f$getDate$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getDate"])(),
-            msg: message.msg,
-            type: 'default'
-        };
-        socket?.emit('CLIENT_SEND_MESSAGE', newMessage, params.id);
-        setChatContent([
-            newMessage,
-            ...chatContentRef.current
-        ]);
-        setMessage({
-            userID: '',
-            username: '',
-            date: '',
-            msg: ''
-        });
-        socket?.emit('CLIENT_USER_TYPING', '', '', params.id);
-    };
+function SendButton({ message, sendMessage }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
         className: `${!message.msg || message?.msg?.trim() === '' ? 'bg-gray-500 cursor-not-allowed' : 'bg-white'} p-2 rounded-2xl cursor-pointer`,
         onClick: sendMessage,
@@ -506,12 +502,12 @@ function SendButton({ message }) {
             color: "black"
         }, void 0, false, {
             fileName: "[project]/src/app/room/[id]/SendButton.tsx",
-            lineNumber: 58,
+            lineNumber: 18,
             columnNumber: 4
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/room/[id]/SendButton.tsx",
-        lineNumber: 53,
+        lineNumber: 13,
         columnNumber: 3
     }, this);
 }
@@ -592,7 +588,7 @@ function Room() {
         params.id
     ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "flex flex-col h-screen w-full",
+        className: "flex flex-col h-screen w-full bg-black",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$room$2f5b$id$5d2f$Header$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/app/room/[id]/page.tsx",

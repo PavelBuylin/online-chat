@@ -24,3 +24,15 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@media (max-width: 768px) {
+  .roomID, .inStream {
+    display: none;
+  }
+  .humanTyping {
+    font-size: 14px;
+  }
+  .msg {
+    max-width: 200px;
+  }
+}

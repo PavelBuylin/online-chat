@@ -115,7 +115,7 @@ const SocketContextProvider = ({ children })=>{
         "SocketContextProvider.useEffect": ()=>{
             if (localStorage.getItem('user') && pathname === `/room/${params.id}`) {
                 const username = JSON.parse(localStorage.getItem('user')).name;
-                const socketInstance = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["io"])(("TURBOPACK compile-time value", "https://online-chat-uf5j.onrender.com"), {
+                const socketInstance = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["io"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_SOCKET_URL || 'http://localhost:3001', {
                     auth: {
                         username,
                         roomID: params.id

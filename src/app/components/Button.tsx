@@ -12,7 +12,6 @@ interface ButtonProps {
 	setIsOpenModal?: Dispatch<SetStateAction<boolean>>
 	setButtonType?: Dispatch<SetStateAction<ButtonType>>
 	name?: string
-	password?: string
 	roomCode?: string
 }
 
@@ -21,7 +20,6 @@ export default function Button({
 	setIsOpenModal,
 	setButtonType,
 	name,
-	password,
 	roomCode
 }: ButtonProps) {
 	const router = useRouter()
@@ -33,24 +31,18 @@ export default function Button({
 		router.push(`/room/${code}`)
 	}
 
-	const validateData = () => {
-		if (name?.trim() === '' || password?.trim() === '') {
-			alert('Введите данные!')
-			return
-		} else if (name?.length! < 4) {
+	const validateData = (): boolean => {
+		if (name?.length! < 4) {
 			alert('Имя должно содержать не менее 4 символов!')
-			return
-		} else if (password?.length! < 8) {
-			alert('Пароль должен содержать не менее 8 символов!')
-			return
+			return false
 		}
+		return true
 	}
 
 	const createUser = () => {
 		const user = {
 			id: nanoid(5),
-			name,
-			password
+			name
 		}
 		localStorage.setItem('user', JSON.stringify(user))
 	}
@@ -61,25 +53,30 @@ export default function Button({
 				setIsOpenModal !== undefined && setIsOpenModal(true)
 				setButtonType !== undefined && setButtonType(type)
 
-				validateData()
 				switch (type) {
-					case 'NextCreate': {
-						createUser()
-						pushToNewRoom(e)
-						break
-					}
-					case 'NextJoin':
-						if (roomCode?.trim() === '') {
-							alert('Введите данные!')
-						} else {
+					case 'NextCreate':
+						if (validateData()) {
 							createUser()
-							router.push(`/room/${roomCode}`)
+							pushToNewRoom(e)
 							break
 						}
+						break
+					case 'NextJoin':
+						if (validateData()) {
+							if (roomCode?.trim() === '') {
+								alert('Введите данные!')
+								break
+							} else {
+								createUser()
+								router.push(`/room/${roomCode}`)
+								break
+							}
+						}
+						break
 				}
 			}}
-			className={`p-2 mt-5 w-50 rounded-[10px] cursor-pointer 
-          ${type === 'Create' || type === 'NextCreate' || type === 'NextJoin' ? 'bg-white text-black' : 'border border-gray-500/40'}`}
+			className={`p-2 mt-5 w-50 rounded-[10px] cursor-pointer text-white
+          ${type === 'Create' || type === 'Join' ? 'border border-gray-500/40 ' : 'border'}`}
 		>
 			{(type === 'Create' && 'Создать комнату') ||
 				(type === 'Join' && 'Войти по коду') ||

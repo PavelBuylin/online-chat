@@ -10,14 +10,14 @@ export default function Home() {
 	const [buttonType, setButtonType] = useState<ButtonType>('Create')
 
 	return (
-		<div className="h-screen flex justify-center items-center">
+		<div className="h-screen flex justify-center items-center bg-black">
 			<div className="h-[50%] w-100 p-5 flex flex-col items-center justify-center">
 				<FiMessageCircle
 					size={60}
-					color="gray"
+					color="white"
 					className="p-3 border-1 rounded-[100%] border-gray-500"
 				/>
-				<p className="mt-8">Настройся на частоту и говори</p>
+				<p className="mt-8 text-gray-400">Настройся на частоту и говори</p>
 				<p className="mt-5 text-center text-gray-400">
 					Без аккаунтов и истории. Придумай имя, создай комнату или зайди по коду.
 				</p>

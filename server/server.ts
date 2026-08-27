@@ -26,7 +26,6 @@ io.on('connection', socket => {
 	})
 
 	socket.on('CLIENT_USER_TYPING', (username: string, value: string, roomID: string) => {
-		console.log(`${username} печатает: ${value}, комната: ${roomID}`)
 		socket.join(`room/${roomID}`)
 		socket.broadcast.to(`room/${roomID}`).emit('SERVER_USER_TYPING', username, value)
 	})

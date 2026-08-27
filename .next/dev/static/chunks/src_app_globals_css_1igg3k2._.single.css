@@ -615,6 +615,10 @@
     background-color: #2d2d2d;
   }
 
+  .bg-black {
+    background-color: var(--color-black);
+  }
+
   .bg-black\/50 {
     background-color: #00000080;
   }
@@ -713,10 +717,6 @@
 
   .wrap-break-word {
     overflow-wrap: break-word;
-  }
-
-  .text-black {
-    color: var(--color-black);
   }
 
   .text-gray-400 {
@@ -822,6 +822,20 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .roomID, .inStream {
+    display: none;
+  }
+
+  .humanTyping {
+    font-size: 14px;
+  }
+
+  .msg {
+    max-width: 200px;
+  }
 }
 
 @property --tw-scale-x {

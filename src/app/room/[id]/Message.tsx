@@ -21,9 +21,9 @@ export default function Message({ message }: MessageProps) {
 						<p>{message.date}</p>
 					</div>
 					<div
-						className={`w-fit min-w-10 max-w-100 rounded-tl-2xl rounded-tr-2xl ${!isMe() ? 'border border-gray-500/35 p-2 pr-4  rounded-br-2xl rounded-bl-[5px]' : 'bg-blue-600/65 p-2 pr-4  rounded-br-[5px] rounded-bl-2xl'}`}
+						className={`msg w-fit min-w-10 max-w-100 rounded-tl-2xl rounded-tr-2xl ${!isMe() ? 'border border-gray-500/35 p-2 pr-4  rounded-br-2xl rounded-bl-[5px]' : 'bg-blue-600/65 p-2 pr-4  rounded-br-[5px] rounded-bl-2xl'}`}
 					>
-						<p className="wrap-break-word">{message.msg}</p>
+						<p className="wrap-break-word text-white">{message.msg}</p>
 					</div>
 				</div>
 			)}{' '}

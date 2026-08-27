@@ -21,26 +21,10 @@ export default function Modal({ isOpen, setIsOpen, buttonType }: ModalProps) {
 			return ''
 		}
 	})
-
-	const [password, setPassword] = useState<string>(() => {
-		const savedUser = localStorage.getItem('user')
-		if (!savedUser) return ''
-
-		try {
-			const parsed = JSON.parse(savedUser)
-			return parsed?.password || ''
-		} catch {
-			return ''
-		}
-	})
 	const [roomCode, setRoomCode] = useState<string>('')
 
 	const handleChangeName = (e: ChangeEvent<HTMLInputElement>) => {
 		setName(e.target.value)
-	}
-
-	const handleChangePassword = (e: ChangeEvent<HTMLInputElement>) => {
-		setPassword(e.target.value)
 	}
 
 	const handleChangeRoomCode = (e: ChangeEvent<HTMLInputElement>) => {
@@ -64,7 +48,7 @@ export default function Modal({ isOpen, setIsOpen, buttonType }: ModalProps) {
 			>
 				<button
 					onClick={() => setIsOpen(false)}
-					className="absolute right-4 top-4 text-gray-400 hover:text-gray-600 text-2xl leading-none"
+					className="absolute right-4 top-4 text-gray-400 hover:text-gray-600 text-2xl leading-none cursor-pointer"
 				>
 					&times;
 				</button>
@@ -77,22 +61,15 @@ export default function Modal({ isOpen, setIsOpen, buttonType }: ModalProps) {
 					<input
 						placeholder="Твоё имя..."
 						type="text"
-						className="mt-3 border border-white w-full rounded-[10px] outline-none p-2 text-2xl"
+						className="mt-3 text-white border border-white w-full rounded-[10px] outline-none p-2 text-2xl"
 						onChange={handleChangeName}
 						value={name!}
-					/>
-					<input
-						placeholder="Придумай пароль..."
-						type="password"
-						className="mt-3 border border-white w-full rounded-[10px] outline-none p-2 text-2xl"
-						onChange={handleChangePassword}
-						value={password}
 					/>
 					{buttonType === 'Join' && (
 						<input
 							placeholder="Номер комнаты..."
 							type="text"
-							className="mt-3 border border-white w-full rounded-[10px] outline-none p-2 text-2xl"
+							className="mt-3 text-white border border-white w-full rounded-[10px] outline-none p-2 text-2xl"
 							onChange={handleChangeRoomCode}
 							value={roomCode}
 						/>
@@ -102,14 +79,12 @@ export default function Modal({ isOpen, setIsOpen, buttonType }: ModalProps) {
 							<Button
 								type="NextCreate"
 								name={name!}
-								password={password}
 							/>
 						)}
 						{buttonType === 'Join' && (
 							<Button
 								type="NextJoin"
 								name={name!}
-								password={password}
 								roomCode={roomCode}
 							/>
 						)}

@@ -37,7 +37,7 @@ export default function HumanTyping() {
 		<div className="flex justify-center items-center">
 			{value && (
 				<div className="flex justify-center items-center">
-					<p className="text-center text-gray-500">{username} печатает</p>
+					<p className="humanTyping text-center text-gray-500">{username} печатает</p>
 					<div className="flex mt-2 text-gray-500">
 						<LuDot
 							size={10}

@@ -14,7 +14,7 @@ var _s = __turbopack_context__.k.signature();
 'use client';
 ;
 ;
-function Button({ type, setIsOpenModal, setButtonType, name, password, roomCode }) {
+function Button({ type, setIsOpenModal, setButtonType, name, roomCode }) {
     _s();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const pushToNewRoom = (e)=>{
@@ -23,22 +23,16 @@ function Button({ type, setIsOpenModal, setButtonType, name, password, roomCode 
         router.push(`/room/${code}`);
     };
     const validateData = ()=>{
-        if (name?.trim() === '' || password?.trim() === '') {
-            alert('Введите данные!');
-            return;
-        } else if (name?.length < 4) {
+        if (name?.length < 4) {
             alert('Имя должно содержать не менее 4 символов!');
-            return;
-        } else if (password?.length < 8) {
-            alert('Пароль должен содержать не менее 8 символов!');
-            return;
+            return false;
         }
+        return true;
     };
     const createUser = ()=>{
         const user = {
             id: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$nanoid$2f$index$2e$browser$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["nanoid"])(5),
-            name,
-            password
+            name
         };
         localStorage.setItem('user', JSON.stringify(user));
     };
@@ -46,30 +40,34 @@ function Button({ type, setIsOpenModal, setButtonType, name, password, roomCode 
         onClick: (e)=>{
             setIsOpenModal !== undefined && setIsOpenModal(true);
             setButtonType !== undefined && setButtonType(type);
-            validateData();
             switch(type){
                 case 'NextCreate':
-                    {
+                    if (validateData()) {
                         createUser();
                         pushToNewRoom(e);
                         break;
                     }
+                    break;
                 case 'NextJoin':
-                    if (roomCode?.trim() === '') {
-                        alert('Введите данные!');
-                    } else {
-                        createUser();
-                        router.push(`/room/${roomCode}`);
-                        break;
+                    if (validateData()) {
+                        if (roomCode?.trim() === '') {
+                            alert('Введите данные!');
+                            break;
+                        } else {
+                            createUser();
+                            router.push(`/room/${roomCode}`);
+                            break;
+                        }
                     }
+                    break;
             }
         },
-        className: `p-2 mt-5 w-50 rounded-[10px] cursor-pointer 
-          ${type === 'Create' || type === 'NextCreate' || type === 'NextJoin' ? 'bg-white text-black' : 'border border-gray-500/40'}`,
+        className: `p-2 mt-5 w-50 rounded-[10px] cursor-pointer text-white
+          ${type === 'Create' || type === 'Join' ? 'border border-gray-500/40 ' : 'border'}`,
         children: type === 'Create' && 'Создать комнату' || type === 'Join' && 'Войти по коду' || type === 'NextCreate' && 'Продолжить' || type === 'NextJoin' && 'Продолжить'
     }, void 0, false, {
         fileName: "[project]/src/app/components/Button.tsx",
-        lineNumber: 59,
+        lineNumber: 51,
         columnNumber: 3
     }, this);
 }
@@ -114,24 +112,9 @@ function Modal({ isOpen, setIsOpen, buttonType }) {
             }
         }
     }["Modal.useState"]);
-    const [password, setPassword] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
-        "Modal.useState": ()=>{
-            const savedUser = localStorage.getItem('user');
-            if (!savedUser) return '';
-            try {
-                const parsed = JSON.parse(savedUser);
-                return parsed?.password || '';
-            } catch  {
-                return '';
-            }
-        }
-    }["Modal.useState"]);
     const [roomCode, setRoomCode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const handleChangeName = (e)=>{
         setName(e.target.value);
-    };
-    const handleChangePassword = (e)=>{
-        setPassword(e.target.value);
     };
     const handleChangeRoomCode = (e)=>{
         setRoomCode(e.target.value);
@@ -144,7 +127,7 @@ function Modal({ isOpen, setIsOpen, buttonType }) {
                 onClick: ()=>setIsOpen(false)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/Modal.tsx",
-                lineNumber: 56,
+                lineNumber: 40,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -152,11 +135,11 @@ function Modal({ isOpen, setIsOpen, buttonType }) {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>setIsOpen(false),
-                        className: "absolute right-4 top-4 text-gray-400 hover:text-gray-600 text-2xl leading-none",
+                        className: "absolute right-4 top-4 text-gray-400 hover:text-gray-600 text-2xl leading-none cursor-pointer",
                         children: "×"
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/Modal.tsx",
-                        lineNumber: 65,
+                        lineNumber: 49,
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -167,40 +150,29 @@ function Modal({ isOpen, setIsOpen, buttonType }) {
                                 children: `${buttonType === 'Create' ? 'Новая комната' : buttonType === 'Join' && 'Вход по коду комнаты'}`
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Modal.tsx",
-                                lineNumber: 72,
+                                lineNumber: 56,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                 placeholder: "Твоё имя...",
                                 type: "text",
-                                className: "mt-3 border border-white w-full rounded-[10px] outline-none p-2 text-2xl",
+                                className: "mt-3 text-white border border-white w-full rounded-[10px] outline-none p-2 text-2xl",
                                 onChange: handleChangeName,
                                 value: name
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Modal.tsx",
-                                lineNumber: 77,
-                                columnNumber: 6
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                placeholder: "Придумай пароль...",
-                                type: "password",
-                                className: "mt-3 border border-white w-full rounded-[10px] outline-none p-2 text-2xl",
-                                onChange: handleChangePassword,
-                                value: password
-                            }, void 0, false, {
-                                fileName: "[project]/src/app/components/Modal.tsx",
-                                lineNumber: 84,
+                                lineNumber: 61,
                                 columnNumber: 6
                             }, this),
                             buttonType === 'Join' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                 placeholder: "Номер комнаты...",
                                 type: "text",
-                                className: "mt-3 border border-white w-full rounded-[10px] outline-none p-2 text-2xl",
+                                className: "mt-3 text-white border border-white w-full rounded-[10px] outline-none p-2 text-2xl",
                                 onChange: handleChangeRoomCode,
                                 value: roomCode
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Modal.tsx",
-                                lineNumber: 92,
+                                lineNumber: 69,
                                 columnNumber: 7
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -208,49 +180,47 @@ function Modal({ isOpen, setIsOpen, buttonType }) {
                                 children: [
                                     buttonType === 'Create' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$Button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         type: "NextCreate",
-                                        name: name,
-                                        password: password
+                                        name: name
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/Modal.tsx",
-                                        lineNumber: 102,
+                                        lineNumber: 79,
                                         columnNumber: 8
                                     }, this),
                                     buttonType === 'Join' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$Button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         type: "NextJoin",
                                         name: name,
-                                        password: password,
                                         roomCode: roomCode
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/Modal.tsx",
-                                        lineNumber: 109,
+                                        lineNumber: 85,
                                         columnNumber: 8
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/Modal.tsx",
-                                lineNumber: 100,
+                                lineNumber: 77,
                                 columnNumber: 6
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/Modal.tsx",
-                        lineNumber: 71,
+                        lineNumber: 55,
                         columnNumber: 5
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/Modal.tsx",
-                lineNumber: 60,
+                lineNumber: 44,
                 columnNumber: 4
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/Modal.tsx",
-        lineNumber: 51,
+        lineNumber: 35,
         columnNumber: 3
     }, this);
 }
-_s(Modal, "5D56EUW6Gt4I9W/4YM9vrFH+61M=");
+_s(Modal, "oQaWFZ8PAclXqP8qRTvwjRvXa5U=");
 _c = Modal;
 var _c;
 __turbopack_context__.k.register(_c, "Modal");
@@ -282,14 +252,14 @@ function Home() {
     const [isOpenModal, setIsOpenModal] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [buttonType, setButtonType] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('Create');
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "h-screen flex justify-center items-center",
+        className: "h-screen flex justify-center items-center bg-black",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "h-[50%] w-100 p-5 flex flex-col items-center justify-center",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiMessageCircle"], {
                         size: 60,
-                        color: "gray",
+                        color: "white",
                         className: "p-3 border-1 rounded-[100%] border-gray-500"
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
@@ -297,7 +267,7 @@ function Home() {
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "mt-8",
+                        className: "mt-8 text-gray-400",
                         children: "Настройся на частоту и говори"
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",

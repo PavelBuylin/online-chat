@@ -57,7 +57,7 @@ export default function Room() {
 	}, [socket, params.id])
 
 	return (
-		<div className="flex flex-col h-screen w-full">
+		<div className="flex flex-col h-screen w-full bg-black">
 			<Header />
 			<div className="py-10 px-[15%] flex flex-col-reverse gap-5 flex-1 overflow-y-auto scrollbar-thumb-gray-700">
 				{chatContent.map((msg: IMessage, index: number) => (

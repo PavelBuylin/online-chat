@@ -19,10 +19,10 @@ export default function Header() {
 				<div className="w-10 flex justify-center">
 					<Pulse />
 				</div>
-				<p className="mr-5 text-green-500">В эфире</p>
-				<strong>{params.id}</strong>
+				<p className="inStream mr-5 text-green-500">В эфире</p>
+				<strong className='roomID text-white'>{params.id}</strong>
 				<CopyToClipboard text={params.id as string}>
-					<FaRegCopy className="cursor-pointer" />
+					<FaRegCopy color='white' className="cursor-pointer" />
 				</CopyToClipboard>
 			</div>
 			<HumanTyping />

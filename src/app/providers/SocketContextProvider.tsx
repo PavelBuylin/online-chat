@@ -17,7 +17,7 @@ export const SocketContextProvider = ({ children }: Props) => {
 	useEffect(() => {
 		if (localStorage.getItem('user') && pathname === `/room/${params.id}`) {
 			const username = JSON.parse(localStorage.getItem('user')!).name
-			const socketInstance = io(process.env.NEXT_PUBLIC_SOCKET_URL!, {
+			const socketInstance = io(process.env.NEXT_PUBLIC_SOCKET_URL! || 'http://localhost:3001', {
 				auth: {
 					username,
 					roomID: params.id
