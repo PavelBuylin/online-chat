@@ -55,11 +55,11 @@ export default function Modal({ isOpen, setIsOpen, buttonType }: ModalProps) {
 				<div className="mb-6">
 					<h3 className="text-xl font-semibold text-white">{`${
 						buttonType === 'Create'
-							? 'Новая комната'
-							: buttonType === 'Join' && 'Вход по коду комнаты'
+							? 'New room'
+							: buttonType === 'Join' && 'Enter by room code'
 					}`}</h3>
 					<input
-						placeholder="Твоё имя..."
+						placeholder="Your name..."
 						type="text"
 						className="mt-3 text-white border border-white w-full rounded-[10px] outline-none p-2 text-2xl"
 						onChange={handleChangeName}
@@ -67,7 +67,7 @@ export default function Modal({ isOpen, setIsOpen, buttonType }: ModalProps) {
 					/>
 					{buttonType === 'Join' && (
 						<input
-							placeholder="Номер комнаты..."
+							placeholder="Room code..."
 							type="text"
 							className="mt-3 text-white border border-white w-full rounded-[10px] outline-none p-2 text-2xl"
 							onChange={handleChangeRoomCode}

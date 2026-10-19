@@ -57,7 +57,7 @@ export default function Header() {
 				// 	console.log('ANSWER', JSON.stringify(data))
 
 				// 	// peerOutcome.on('connect', () => {
-				// 	// 	console.log('Подключен 2')
+				// 	// 	console.log('Connected 2')
 				// 	// })
 
 				// 	peerOutcome.on('stream', stream => {
@@ -68,7 +68,7 @@ export default function Header() {
 				// 	})
 
 				// 	// peerIncome.on('connect', () => {
-				// 	// 	console.log('Подключен 1')
+				// 	// 	console.log('Connected 1')
 				// 	// })
 				// })
 			})
@@ -85,7 +85,7 @@ export default function Header() {
 				<div className="w-10 flex justify-center">
 					<Pulse />
 				</div>
-				<p className="inStream mr-5 text-green-500">В эфире</p>
+				<p className="inStream mr-5 text-green-500">In live</p>
 				<strong className="roomID text-white">{params.id}</strong>
 				<CopyToClipboard text={params.id as string}>
 					<FaRegCopy
@@ -98,13 +98,13 @@ export default function Header() {
 						className="bg-white p-1.25 rounded cursor-pointer"
 						onClick={joinToVoice}
 					>
-						Зайти
+						Join
 					</button>
 					<button
 						className="bg-white p-1.25 rounded cursor-pointer"
 						onClick={leaveFromVoice}
 					>
-						Выйти
+						Leave
 					</button>
 					<audio controls />
 				</div>
@@ -117,7 +117,7 @@ export default function Header() {
 					setChatContent([])
 				}}
 			>
-				Выйти
+				Exit
 			</strong>
 		</header>
 	)

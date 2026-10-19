@@ -17,10 +17,10 @@ const io = new Server(PORT, {
 })
 
 io.on('connection', socket => {
-	console.log('Новый пользователь подключился к сокету:', socket.id)
+	console.log('New user connected to socket:', socket.id)
 
 	socket.on('CLIENT_USER_JOIN', (roomID: string, username: string) => {
-		console.log(`${username} подключился,`, roomID)
+		console.log(`${username} connected,`, roomID)
 		socket.join(`room/${roomID}`)
 		socket.broadcast.to(`room/${roomID}`).emit('SERVER_USER_JOIN', username)
 	})
@@ -40,7 +40,7 @@ io.on('connection', socket => {
 		socket.join(`room/${roomID}`)
 		socket.broadcast
 			.to(`room/${roomID}`)
-			.emit('SERVER_VOICE_USER_JOIN', 'Новый юзер зашел, дайте ему свой сигнал!')
+			.emit('SERVER_VOICE_USER_JOIN', 'New user connected, give him your signal!')
 	})
 
 	socket.on('CLIENT_USER_CALL', (data: JSON, roomID: string) => {
@@ -57,9 +57,9 @@ io.on('connection', socket => {
 	const roomID = socket.handshake.auth.roomID
 
 	socket.on('disconnecting', () => {
-		console.log(`${username} вышел из комнаты,`, roomID)
+		console.log(`${username} disconnected from room,`, roomID)
 		socket.broadcast.to(`room/${roomID}`).emit('SERVER_USER_DISCONNECT', username)
 	})
 })
 
-console.log(`Сервер запущен на порту ${PORT}`)
+console.log(`Server started on port ${PORT}`)

@@ -15,11 +15,11 @@ export default function Home() {
 				<FiMessageCircle
 					size={60}
 					color="white"
-					className="p-3 border-1 rounded-[100%] border-gray-500"
+					className="p-3 border rounded-[100%] border-gray-500"
 				/>
-				<p className="mt-8 text-gray-400">Настройся на частоту и говори</p>
+				<p className="mt-8 text-gray-400">Tune in and start talking</p>
 				<p className="mt-5 text-center text-gray-400">
-					Без аккаунтов и истории. Придумай имя, создай комнату или зайди по коду.
+					No accounts, no history. Pick a name, create a room, or join with a code.
 				</p>
 				<Button
 					type="Create"
@@ -34,7 +34,7 @@ export default function Home() {
 					setButtonType={setButtonType}
 				/>
 				<p className="text-center text-gray-400 text-[13px] mt-5">
-					Комната и сообщения живут, пока открыта вкладка.
+					Rooms and messages last only while the tab is open.
 				</p>
 			</div>
 			{isOpenModal && (
