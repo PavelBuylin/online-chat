@@ -16,7 +16,7 @@ export default function Message({ message }: MessageProps) {
 			{message.type === 'default' && (
 				<div className={`msg ${isMe() ? 'ml-auto' : ''}`}>
 					<div className={`flex items-center text-gray-500/65 ${isMe() && 'justify-end'}`}>
-						<p>{isMe() ? 'Ты' : message.username}</p>
+						<p>{isMe() ? 'You' : message.username}</p>
 						<LuDot />
 						<p>{message.date}</p>
 					</div>
