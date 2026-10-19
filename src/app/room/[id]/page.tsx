@@ -26,26 +26,26 @@ export default function Room() {
 
 		socket?.emit('CLIENT_USER_JOIN', params.id, username)
 		socket?.on('SERVER_USER_JOIN', (username: string) => {
-			console.log(`${username} подключился`)
+			console.log(`${username} connected`)
 
 			const newMessage: IMessage = {
 				userID: JSON.parse(localStorage.getItem('user')!).id,
 				username: username,
 				date: getDate(),
-				msg: `${username} подключился`,
+				msg: `${username} connected`,
 				type: 'join'
 			}
 			setChatContent([newMessage, ...chatContentRef.current])
 		})
 
 		socket?.on('SERVER_USER_DISCONNECT', (username: string) => {
-			console.log(`${username} вышел`)
+			console.log(`${username} disconnected`)
 
 			const newMessage: IMessage = {
 				userID: JSON.parse(localStorage.getItem('user')!).id,
 				username: username,
 				date: getDate(),
-				msg: `${username} отключился`,
+				msg: `${username} disconnected`,
 				type: 'disconnect'
 			}
 			setChatContent([newMessage, ...chatContentRef.current])

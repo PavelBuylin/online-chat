@@ -33,7 +33,7 @@ export default function Button({
 
 	const validateData = (): boolean => {
 		if (name?.length! < 4) {
-			alert('Имя должно содержать не менее 4 символов!')
+			alert('The name must contain at least 4 characters!')
 			return false
 		}
 		return true
@@ -64,7 +64,7 @@ export default function Button({
 					case 'NextJoin':
 						if (validateData()) {
 							if (roomCode?.trim() === '') {
-								alert('Введите данные!')
+								alert('Enter data!')
 								break
 							} else {
 								createUser()
@@ -78,10 +78,10 @@ export default function Button({
 			className={`p-2 mt-5 w-50 rounded-[10px] cursor-pointer text-white
           ${type === 'Create' || type === 'Join' ? 'border border-gray-500/40 ' : 'border'}`}
 		>
-			{(type === 'Create' && 'Создать комнату') ||
-				(type === 'Join' && 'Войти по коду') ||
-				(type === 'NextCreate' && 'Продолжить') ||
-				(type === 'NextJoin' && 'Продолжить')}
+			{(type === 'Create' && 'Create Room') ||
+				(type === 'Join' && 'Join by Code') ||
+				(type === 'NextCreate' && 'Continue') ||
+				(type === 'NextJoin' && 'Continue')}
 		</button>
 	)
 }

@@ -19,7 +19,7 @@ export default function Header() {
 				<div className="w-10 flex justify-center">
 					<Pulse />
 				</div>
-				<p className="inStream mr-5 text-green-500">В эфире</p>
+				<p className="inStream mr-5 text-green-500">In live</p>
 				<strong className='roomID text-white'>{params.id}</strong>
 				<CopyToClipboard text={params.id as string}>
 					<FaRegCopy color='white' className="cursor-pointer" />
@@ -33,7 +33,7 @@ export default function Header() {
 					setChatContent([])
 				}}
 			>
-				Выйти
+				Exit
 			</strong>
 		</header>
 	)

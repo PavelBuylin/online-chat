@@ -63,7 +63,7 @@ export default function Footer() {
 	return (
 		<footer className="mt-auto border-t border-gray-500/35 h-15 p-13 flex justify-center items-center gap-5">
 			<input
-				placeholder="Сообщение..."
+				placeholder="Message..."
 				type="text"
 				className="border border-gray-500/35 w-[70%] rounded-[10px] outline-none p-2 text-2xl text-white"
 				onChange={handleChangeMessage}

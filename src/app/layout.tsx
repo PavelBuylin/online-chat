@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-	title: 'Онлайн чат',
-	description: 'Это онлайн чат, написанный при помощи Next JS, Socket.io и Socket.io-client',
+	title: 'Online chat',
+	description: 'This is an online chat built with Next.js, Socket.io, and Socket.io-client',
 	keywords: ['Next.js', 'React', 'SEO Optimization', 'Web Development', 'Sockets', 'Online chat'],
 	icons: {
 		icon: '/public/icon.ico',
