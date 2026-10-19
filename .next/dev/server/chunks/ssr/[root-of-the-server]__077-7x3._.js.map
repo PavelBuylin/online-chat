@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///home/pavel/Desktop/online-chat/src/app/room/[id]/Header.tsx"],"sourcesContent":["export default function Header() {\n\treturn <div className=\"border-b border-gray-500/35 h-15 p-5\">\n\t\t<Pulse />\n\t\t<p>В эфире</p>\n\t</div>\n}\n"],"names":["Header","className","Pulse"],"mappings":";;;;;;AAAe,SAASA;IACvB,qBAAO,8OAAC;QAAIC,WAAU;;0BACrB,8OAACC;;;;;0BACD,8OAAC;0BAAE;;;;;;;;;;;;AAEL"}},
-    {"offset": {"line": 43, "column": 0}, "map": {"version":3,"sources":["file:///home/pavel/Desktop/online-chat/src/app/room/[id]/page.tsx"],"sourcesContent":["import Header from './Header'\n\nexport default function Room() {\n\treturn (\n\t\t<>\n\t\t\t<Header />\n\t\t\t<div>Room</div>\n\t\t</>\n\t)\n}\n"],"names":["Room"],"mappings":";;;;;AAAA;;;AAEe,SAASA;IACvB,qBACC;;0BACC,8OAAC,kJAAM;;;;;0BACP,8OAAC;0BAAI;;;;;;;;;;;;AAGR"}}]
-}

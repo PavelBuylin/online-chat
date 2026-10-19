@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///home/pavel/Desktop/online-chat/src/app/styles/pulse.css"],"sourcesContent":["@keyframes pulseAnimation {\n\tfrom {\n\t\tbox-shadow: 0 0 0 0px rgb(34 197 94 / 0.3);\n\t}\n\tto {\n\t\tbox-shadow: 0 0 0 4px rgb(34 197 94 / 0.3);\n\t}\n}\n\n.pulse {\n\tanimation: pulseAnimation 0.8s infinite alternate ease-in-out;\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;;;AASA"}},
-    {"offset": {"line": 16, "column": 0}, "map": {"version":3,"sources":["file:///home/pavel/Desktop/online-chat/src/app/styles/message.css"],"sourcesContent":["@keyframes messageAnimation {\n\tfrom {\n\t\tposition: relative; \n\t\ttop: 100px;\n\t}\n\tto {\n\t\tposition: relative; \n\t\ttop: 0px;\n\t}\n}\n\n.msg {\n\tanimation: messageAnimation 0.5s ease-in-out;\n}"],"names":[],"mappings":"AAAA;;;;;;;;;;;;AAWA"}}]
-}

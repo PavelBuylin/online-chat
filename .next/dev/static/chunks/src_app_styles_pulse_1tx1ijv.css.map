@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///home/pavel/Desktop/online-chat/src/app/styles/pulse.css"],"sourcesContent":["@keyframes pulseAnimation {\n\tfrom {\n\t\tbox-shadow: 0 0 0 0px rgb(34 197 94 / 0.3);\n\t}\n\tto {\n\t\tbox-shadow: 0 0 0 4px rgb(34 197 94 / 0.3);\n\t}\n}\n\n.pulse {\n\tanimation: pulseAnimation 0.8s infinite alternate ease-in-out;\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;;;AASA"}}]
-}

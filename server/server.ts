@@ -36,6 +36,23 @@ io.on('connection', socket => {
 		socket.broadcast.to(`room/${roomID}`).emit('SERVER_SEND_MESSAGE', message)
 	})
 
+	socket.on('CLIENT_VOICE_USER_JOIN', (roomID: string) => {
+		socket.join(`room/${roomID}`)
+		socket.broadcast
+			.to(`room/${roomID}`)
+			.emit('SERVER_VOICE_USER_JOIN', 'Новый юзер зашел, дайте ему свой сигнал!')
+	})
+
+	socket.on('CLIENT_USER_CALL', (data: JSON, roomID: string) => {
+		socket.join(`room/${roomID}`)
+		socket.broadcast.to(`room/${roomID}`).emit('SERVER_USER_CALL', data)
+	})
+
+	socket.on('CLIENT_USER_ANSWER', (data: JSON, roomID: string) => {
+		// socket.join(`room/${roomID}`)
+		socket.broadcast.to(`room/${roomID}`).emit('SERVER_USER_ANSWER', data)
+	})
+
 	const username = socket.handshake.auth.username
 	const roomID = socket.handshake.auth.roomID
 

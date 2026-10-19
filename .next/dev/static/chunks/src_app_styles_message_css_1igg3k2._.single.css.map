@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/app/styles/message.css"],"sourcesContent":["@keyframes messageAnimation {\n\tfrom {\n\t\tposition: relative; \n\t\ttop: 100px;\n\t}\n\tto {\n\t\tposition: relative; \n\t\ttop: 0px;\n\t}\n}\n\n.msg {\n\tanimation: messageAnimation 0.5s ease-in-out;\n}"],"names":[],"mappings":"AAAA;;;;;;;;;;;;AAWA"}}]
-}

@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///home/pavel/Desktop/online-chat/src/app/[id]/page.tsx"],"sourcesContent":["export default function Room() {\n  return <div>Room</div>;\n}\n"],"names":["Room"],"mappings":";;;;;;AAAe,SAASA;IACtB,qBAAO,8OAAC;kBAAI;;;;;;AACd"}}]
-}

@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///home/pavel/Desktop/online-chat/src/app/context/MessageContext.tsx"],"sourcesContent":["'use client'\n\nimport { createContext, useContext } from 'react'\n\nexport interface MessageContent {\n\tusername: string\n\tdate: Date\n\tmessage: string\n\tsetMessage: () => void\n}\n\nexport const MessageContext = createContext<MessageContent>({} as MessageContent)\nexport const useMessageContext = () => useContext(MessageContext)\n"],"names":["MessageContext","useMessageContext"],"mappings":";;;;;;AAEA;AAFA;;AAWO,MAAMA,+BAAiB,IAAA,sNAAa,EAAiB,CAAC;AACtD,MAAMC,oBAAoB,IAAM,IAAA,mNAAU,EAACD"}}]
-}
